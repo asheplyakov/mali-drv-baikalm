@@ -1,0 +1,10 @@
+prefix=/usr/local
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: egl
+Description: ARM EGL Library
+Version: 26 
+Libs: -L${libdir} -lEGL -lmali
+Libs.private: -lpthread -pthread -lm -ldl
+Cflags: -I${includedir}

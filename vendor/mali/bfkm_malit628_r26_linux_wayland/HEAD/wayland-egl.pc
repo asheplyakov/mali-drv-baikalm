@@ -1,0 +1,11 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include
+
+Name: wayland-egl
+Description: Frontend wayland-egl library ARM
+Version: 26
+Requires: wayland-client
+Libs: -L${libdir} -lwayland-egl -lmali
+Cflags: -I${includedir}
