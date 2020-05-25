@@ -1,9 +1,12 @@
 %define arm_release 26
 %define baikal_sdk_version 4.2
+# It's a binary blob we've got from a vendor, so don't bother to
+# produce debuginfo packages
+%global __find_debuginfo_files %nil
 
 Name: mali-drv-baikalm
 Version: %arm_release.%baikal_sdk_version
-Release: alt1
+Release: alt2
 
 Summary: Proprietary GPU drivers for BE-M1000 SoC, userspace part
 License: Proprietary
@@ -53,5 +56,8 @@ chrpath -d %buildroot/usr/lib64/mali/liboffline_compiler_api_gles.so
 ldconfig
 
 %changelog
+* Mon May 25 2020 Alexey Sheplyakov <asheplyakov@altlinux.org> 26.4.2-alt2
+- Disabled debuginfo
+
 * Sun May 24 2020 Alexey Sheplyakov <asheplyakov@altlinux.org> 26.4.2-alt1
 - Initial build
